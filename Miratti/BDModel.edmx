@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="mirattidbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="categoria">
+          <Key>
+            <PropertyRef Name="idCategoria" />
+          </Key>
+          <Property Name="idCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="productos">
+          <Key>
+            <PropertyRef Name="idProducto" />
+          </Key>
+          <Property Name="idProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="imagen" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="precio" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="idCategoria" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'mirattidb.dbo.trabajadores' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="trabajadores">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="255" />
+          <Property Name="puesto" Type="varchar" MaxLength="255" />
+          <Property Name="imagen" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__productos__idCat__38996AB5">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
+          <End Role="productos" Type="Self.productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="idCategoria" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="idCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mirattidbModelStoreContainer">
+          <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="productos" EntityType="Self.productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trabajadores" EntityType="Self.trabajadores" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [trabajadores].[id] AS [id], 
+    [trabajadores].[nombre] AS [nombre], 
+    [trabajadores].[puesto] AS [puesto], 
+    [trabajadores].[imagen] AS [imagen]
+    FROM [dbo].[trabajadores] AS [trabajadores]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__productos__idCat__38996AB5" Association="Self.FK__productos__idCat__38996AB5">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="productos" EntitySet="productos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mirattidbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="categoria">
+          <Key>
+            <PropertyRef Name="idCategoria" />
+          </Key>
+          <Property Name="idCategoria" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="nombre" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" Type="String" />
+          <NavigationProperty Name="productos" Relationship="Self.FK__productos__idCat__38996AB5" FromRole="categoria" ToRole="productos" />
+        </EntityType>
+        <EntityType Name="producto">
+          <Key>
+            <PropertyRef Name="idProducto" />
+          </Key>
+          <Property Name="idProducto" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="nombre" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="imagen" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="precio" Precision="10" Scale="2" Type="Decimal" />
+          <Property Name="idCategoria" Type="Int32" />
+          <NavigationProperty Name="categoria" Relationship="Self.FK__productos__idCat__38996AB5" FromRole="productos" ToRole="categoria" />
+        </EntityType>
+        <Association Name="FK__productos__idCat__38996AB5">
+          <End Type="Self.categoria" Multiplicity="0..1" Role="categoria" />
+          <End Type="Self.producto" Multiplicity="*" Role="productos" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="idCategoria" />
+            </Principal>
+            <Dependent Role="productos">
+              <PropertyRef Name="idCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mirattidbEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="categorias" EntityType="Self.categoria" />
+          <EntitySet Name="productos" EntityType="Self.producto" />
+          <AssociationSet Name="FK__productos__idCat__38996AB5" Association="Self.FK__productos__idCat__38996AB5">
+            <End EntitySet="categorias" Role="categoria" />
+            <End EntitySet="productos" Role="productos" />
+          </AssociationSet>
+          <EntitySet Name="trabajadores" EntityType="mirattidbModel.trabajadore" />
+        </EntityContainer>
+        <EntityType Name="trabajadore">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="puesto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="imagen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mirattidbModelStoreContainer" CdmEntityContainer="mirattidbEntities1">
+          <EntitySetMapping Name="categorias">
+            <EntityTypeMapping TypeName="mirattidbModel.categoria">
+              <MappingFragment StoreEntitySet="categoria">
+                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="productos">
+            <EntityTypeMapping TypeName="mirattidbModel.producto">
+              <MappingFragment StoreEntitySet="productos">
+                <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trabajadores">
+            <EntityTypeMapping TypeName="mirattidbModel.trabajadore">
+              <MappingFragment StoreEntitySet="trabajadores">
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="puesto" ColumnName="puesto" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="Miratti.UserControlAjustes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Miratti"
+             xmlns:language="clr-namespace:Miratti.Properties.Langs"
+             mc:Ignorable="d" 
+             Height="450" Width="700">
+    <UserControl.Resources>
+        <local:Languages x:Key="Language"/>
+    </UserControl.Resources>
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TransitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration= 0:0:0.8}">
+            <Grid x:Name="AjustesgridPrincipal">
+                <StackPanel Orientation="Vertical">
+                        <StackPanel Margin="50 0">
+                            <TextBlock x:Name="generalText" Text="General" FontWeight="bold" FontSize="20" FontFamily="Comic Sans MS"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Margin="50 15 50 0" Orientation="Horizontal" VerticalAlignment="Top">
+                        <TextBlock x:Name="menuText" Text="{Binding ElementName=combobox, Path=SelectedItem.menu, TargetNullValue=0, FallbackValue='Menú'}" FontWeight="Bold" FontSize="16" Margin="0 10 0 10"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="40 0 40 0">
+                            <materialDesign:PackIcon x:Name="temaOscuroIcon" Kind="ThemeLightDark" Width="20" Height="30" VerticalAlignment="center" Margin="5 0 0 0"/>
+                        <TextBlock x:Name="temaOscuroText" Text="{Binding ElementName=combobox, Path=SelectedItem.tema, TargetNullValue=0, FallbackValue='Tema oscuro'}" FontSize="16" VerticalAlignment="Center" Margin="10 0"/>
+                        <Button x:Name="btn_Modosc" Width="70" Content="ON" Background="#FF222222" Foreground="white" Click="Button_Click_1" >
+                                    
+                        </Button>
+                        </StackPanel>
+                        <!--<StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="40 10 40 0">
+                            <materialDesign:PackIcon x:Name="colorIcon" Kind="Color" Width="20" Height="30" VerticalAlignment="center" Margin="5 0 0 0"/>
+                        <TextBlock x:Name="colorFondoTexto" Text="{Binding ElementName=combobox, Path=SelectedItem.colorDeFondo, TargetNullValue=0, FallbackValue='Color de fondo'}" FontSize="16" VerticalAlignment="Center" Margin="10 0"/>
+                            <Button x:Name="botonColor" Width="70" Background="#FF222222" Foreground="white" Click="Button_Click" >
+                                
+                            </Button>
+                        </StackPanel>-->
+                    <StackPanel Margin="50 15 50 0" Orientation="Horizontal" VerticalAlignment="Top">
+                        <TextBlock x:Name="traduccionText" Text="{Binding ElementName=combobox, Path=SelectedItem.traduccion, TargetNullValue=0, FallbackValue='Traducción'}" FontWeight="Bold" FontSize="16" Margin="0 10 0 10"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="40 0 40 0">
+                        <materialDesign:PackIcon x:Name="languageIcon" Kind="Language" Width="20" Height="30" VerticalAlignment="center" Margin="5 0 0 0"/>
+                        <TextBlock x:Name="idiomaText" Text="{Binding ElementName=combobox, Path=SelectedItem.idioma, TargetNullValue=0, FallbackValue='Idioma'}" FontSize="16" VerticalAlignment="Center" Margin="10 0"/>
+                        <ComboBox ItemsSource="{Binding Source={StaticResource Language}, Path=MyLangs}" x:Name="combobox"  IsReadOnly="True" Text="Elije" SelectionChanged="ComboBox_SelectionChanged">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{Binding Flag}" Width="28px"/>
+                                        <TextBlock Text="{Binding LangName, FallbackValue='Español'}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        
+                    </StackPanel>
+                    <StackPanel Margin="50 15 50 0" Orientation="Horizontal" VerticalAlignment="Top">
+                        <TextBlock x:Name="ayudaText" Text="{Binding ElementName=combobox, Path=SelectedItem.ayudaText, TargetNullValue=0, FallbackValue='Ayuda'}" FontWeight="Bold" FontSize="16" Margin="0 10 0 10"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="40 0 40 0">
+                        <materialDesign:PackIcon x:Name="aboutIcon" Kind="About" Width="20" Height="30" VerticalAlignment="center" Margin="5 0 0 0"/>
+                        <Button Background="Transparent" BorderBrush="Transparent" Foreground="black" Click="Button_Click_2">
+                            <TextBlock x:Name="acercaDeText" Text="{Binding ElementName=combobox, Path=SelectedItem.acercaDe, TargetNullValue=0, FallbackValue='Acerca de'}" FontSize="16" VerticalAlignment="Center" Margin="10 0"/>
+                        </Button>                        
+                    </StackPanel>
+                    <StackPanel MouseLeftButtonUp="StackPanel_MouseLeftButtonUp" Orientation="Horizontal" VerticalAlignment="Top" Margin="40 0 40 0">
+                        <materialDesign:PackIcon x:Name="WindowCloseIcon" Kind="WindowClose" Width="20" Height="30" VerticalAlignment="center" Margin="5 0 0 0"/>
+                        <Button Background="Transparent" BorderBrush="Transparent" Foreground="black" Click="Button_Click_3">
+                            <TextBlock x:Name="cerrarSessionText" Text="{Binding ElementName=combobox, Path=SelectedItem.cerrarSession, TargetNullValue=0, FallbackValue='Cerrar sesión'}" FontSize="16" VerticalAlignment="Center" Margin="10 0"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="40 10 40 0"/>
+                </StackPanel>
+                
+            </Grid>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>

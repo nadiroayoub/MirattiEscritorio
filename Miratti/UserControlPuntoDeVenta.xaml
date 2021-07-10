@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:Miratti"
-             mc:Ignorable="d" 
-             Height="450" Width="700">
+             mc:Ignorable="d"
+             Loaded="UserControl_Loaded"
+             Height="450" Width="750">
     <Grid>
         <materialDesign:TransitioningContent x:Name="TransitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration= 0:0:0.8}">
             <Grid>
@@ -26,23 +27,29 @@
                         </Grid.RowDefinitions>
                         <Grid Background="#FF222222">
                             <StackPanel VerticalAlignment="Center">
-                                <TextBlock Text="Categorias" Foreground="white" FontWeight="bold" FontSize="15" Margin="10,0,0,0"/>
+                                <TextBlock x:Name="categorias" Text="Categorias" Foreground="white" FontWeight="bold" FontSize="15" Margin="10,0,0,0"/>
                             </StackPanel>
                         </Grid>
-                        <Grid Background="White" Grid.Row="2">
-                            <ListView VerticalAlignment="Center" BorderBrush="Transparent">
-                                <ListView.ItemsPanel>
+                        <Grid x:Name="gridCategorias" Background="#FFEEEEEE" Grid.Row="2">
+                            <ItemsControl x:Name="itemsControl">
+                                <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
-                                        <WrapPanel Orientation="Horizontal"/>
+                                        <WrapPanel />
                                     </ItemsPanelTemplate>
-                                </ListView.ItemsPanel>
-                                <ListViewItem VerticalAlignment="Center" VerticalContentAlignment="Center">
-                                    <Button Content="HOMBRE" Background="#bd9302" Height="65" Width="97.5" Foreground="white" FontWeight="UltraBold" BorderBrush="Transparent"/>
-                                </ListViewItem>
-                                <ListViewItem VerticalAlignment="Center" VerticalContentAlignment="Center">
-                                    <Button Content="MUJER" Background="#bd9302" Height="65" Width="97.5" Foreground="white" FontWeight="UltraBold" BorderBrush="Transparent"/>
-                                </ListViewItem>
-                            </ListView>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Content="{Binding nombre}" 
+                                                    Width="100"
+                                                    Margin="10 10 10 10"
+                                                    HorizontalAlignment="center"
+                                                    Click="Button_Click" Background="#bd9302"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="2">
@@ -53,83 +60,104 @@
                             </Grid.RowDefinitions>
                             <Grid Background="#FF222222">
                                 <StackPanel VerticalAlignment="Center">
-                                    <TextBlock Text="Articulos" Foreground="white" FontWeight="bold" FontSize="15" Margin="10,0,0,0"/>
+                                    <TextBlock x:Name="articulos" Text="Articulos" Foreground="white" FontWeight="bold" FontSize="15" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Grid>
-                            <Grid Background="White" Grid.Row="2">
-                                <ListView VerticalAlignment="Top"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                                    <ListView.ItemsPanel>
+                            <Grid x:Name="gridProductos" Background="#FFEEEEEE" Grid.Row="2">
+                                <ItemsControl x:Name="listViewProducts">
+                                    <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
-                                            <WrapPanel Orientation="Horizontal"/>
+                                            <WrapPanel />
                                         </ItemsPanelTemplate>
-                                    </ListView.ItemsPanel>
-                                    <ListViewItem VerticalAlignment="Center" VerticalContentAlignment="Center">
-                                        <Button BorderBrush="Transparent" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" Height="100" Width="200" Foreground="white" FontWeight="UltraBold">
-                                            <Button.Background>
-                                                <ImageBrush ImageSource="Assets/AnikClassiqueBeige.jpg"/>
-                                            </Button.Background>
-                                            <Button.Content>
-                                                <StackPanel>
-                                                    <TextBlock Text="8.00$" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="130 0 0 50">
-                                                        <TextBlock.Background>
-                                                            <SolidColorBrush Color="#bd9302" Opacity=".7"/>
-                                                        </TextBlock.Background>
-                                                    </TextBlock>
-                                                    <TextBlock Text="ANIK CLASSIQUE BEIGE">
-                                                        <TextBlock.Background>
-                                                            <SolidColorBrush Color="#bd9302" Opacity=".7"/>
-                                                        </TextBlock.Background>
-                                                    </TextBlock>
-                                                </StackPanel>
-                                            </Button.Content>
-                                        </Button>
-                                    </ListViewItem>
-                                </ListView>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Click="Button_Click_1" BorderBrush="Transparent" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Stretch" Height="100" Width="200" Foreground="white" FontWeight="UltraBold">
+                                                    <Button.Background>
+                                                        <ImageBrush ImageSource="{Binding imagen}"/>
+                                                    </Button.Background>
+                                                    <Button.Content>
+                                                        <StackPanel>
+                                                            <TextBlock Text="{Binding precio}" HorizontalAlignment="Center" FontSize="10" VerticalAlignment="Top" Margin="110 0 0 30" Padding="5 5 5 5">
+                                                                <TextBlock.Background>
+                                                                    <SolidColorBrush Color="#bd9302" Opacity=".7"/>
+                                                                </TextBlock.Background>
+
+                                                            </TextBlock>
+                                                            <Border BorderBrush="{x:Null}" Height="50">
+                                                                <TextBlock Text="{Binding nombre}" FontSize="10" VerticalAlignment="center" TextWrapping="Wrap">
+                                                                    <TextBlock.Background>
+                                                                        <SolidColorBrush Color="#bd9302" Opacity=".7"/>
+                                                                    </TextBlock.Background>
+                                                                </TextBlock>
+                                                            </Border>
+                                                        </StackPanel>
+                                                    </Button.Content>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
                             </Grid>
+
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid Grid.Row="2" Grid.Column="2">
+                <Grid Grid.Row="2" Grid.Column="2" Background="#FFEEEEEE">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="4*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    
-                    <StackPanel Background="white" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Button Width="40" Height="40" Margin="0,0,10,0" BorderBrush="Transparent">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="auto">
+
+                        <ItemsControl Grid.Row="0" x:Name="listaDeCompra">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                               
+                                    <Button x:Name="botonProducto" Click="Button_Click_6" Background="Transparent">
+                                    <Border BorderBrush="Gray" BorderThickness="0 0 0 1">
+                                        <StackPanel Orientation="Horizontal" Margin="2">
+                                            <!--<Border BorderBrush="Gray" BorderThickness="0 0 1 0">
+                                                <TextBlock x:Name="nombreVeces" FontWeight="bold" Text="1x" Foreground="#FF222222" Margin="5 0 10 0"/>
+                                            </Border>-->
+                                            <TextBlock FontSize="12" x:Name="nombreProducto" FontWeight="bold" Text="{Binding nombre}" Foreground="#FF222222" Margin="10 0 20 0"/>
+                                            <TextBlock FontSize="12" x:Name="precioProducto" FontWeight="bold" Text="{Binding precio}" Foreground="#FF222222"/>
+                                        </StackPanel>
+                                    </Border>
+                                
+                                    </Button>
+                                </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                        </ScrollViewer> 
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <!--<Button x:Name="botonEditar" Click="Button_Click_5" Width="40" Height="40" Margin="0,0,10,0" BorderBrush="Transparent">
                             <Button.Background>
                                 <ImageBrush ImageSource="Assets/edit-icon.png"/>
                             </Button.Background>
-                        </Button>
-                        <Button Width="40" Height="40" Margin="0,0,10,0" BorderBrush="Transparent">
+                        </Button>-->
+                        <Button Click="Button_Click_2" Width="40" Height="40" Margin="0,0,10,0" BorderBrush="Transparent">
                             <Button.Background>
                                 <ImageBrush ImageSource="Assets/delete-icon.png"/>
                             </Button.Background>
                         </Button>
-                        <Button Width="40" Height="40" Margin="0,0,10,0" BorderBrush="Transparent">
+                        <Button Click="Button_Click_3" Width="40" Height="40" Margin="0,0,10,0" BorderBrush="Transparent">
                             <Button.Background>
                                 <ImageBrush ImageSource="Assets/efectivo-icon.png"/>
                             </Button.Background>
                         </Button>
-                        <Button Width="40" Height="40" Margin="0,0,10,0" BorderBrush="Transparent">
+                        <Button Click="Button_Click_4"  Width="40" Height="40" Margin="0,0,10,0" BorderBrush="Transparent">
                             <Button.Background>
                                 <ImageBrush ImageSource="Assets/card-icon.png"/>
                             </Button.Background>
                         </Button>
                     </StackPanel>
-                    <StackPanel Grid.Row="2" Margin="10" Background="#bd9302">
-                        <Label>
-                            <Label.Content>
-                                <TextBlock Text="Cobrar" Foreground="white" FontSize="15" FontWeight="Bold"/>
-                            </Label.Content>
-                        </Label>
-                        <Label>
-                            <Label.Content>
-                                <TextBlock Text="28.00$" Foreground="white" FontSize="10" FontWeight="Bold"/>
-                            </Label.Content>
-                        </Label>
+                    <StackPanel Grid.Row="2" Width="auto" Height="auto" Margin="10" Background="#bd9302">
+                        <TextBlock x:Name="cobrar" Margin="10 10 0 0" Text="Cobrar" Foreground="white" FontSize="15" FontWeight="Bold"/>
+                        <TextBlock Margin="10 0 0 10" Text="{Binding Path = PrecioTotal, Mode=TwoWay}" Foreground="white" FontSize="10" FontWeight="Bold"/>
                     </StackPanel>
                 </Grid>
 

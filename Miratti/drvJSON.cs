@@ -11,12 +11,7 @@ namespace Miratti
 {
     class drvJSON : iDataDriver
     {
-        public string origen { get; set; }
-        private List<dynamic> datos;
-        private List<string> keys;
-        private bool error;
-        private string errorMsg;
-        public bool esLocal { get; set; }
+        // constructor
         public drvJSON()
         {
             origen = "";
@@ -26,6 +21,12 @@ namespace Miratti
             errorMsg = "";
             esLocal = true;
         }
+        public string origen { get; set; }
+        private List<dynamic> datos;
+        private List<string> keys;
+        private bool error;
+        private string errorMsg;
+        public bool esLocal { get; set; }
         public bool hayError()
         {
             return error;

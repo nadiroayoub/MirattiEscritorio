@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,89 +22,181 @@ namespace Miratti
     /// </summary>
     public partial class UserControlContact : UserControl
     {
+        public MainWindow mainWindow = Window.GetWindow(Application.Current.MainWindow) as MainWindow;
         public UserControlContact()
         {
             
             InitializeComponent();
-            drvJSON datosContactos = new drvJSON();
-            datosContactos.origen = "E:/A.Cursos oficiales/Segundo ano/PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)/EL SEGUNDO AÑO/TF Escritorio/Miratti/Miratti/Recursos/InfoContactos.json";
-            datosContactos.loadData();
-            for (int i=0; i < datosContactos.getTotal(); i++)
+            LoadGrid();
+            checkColor();
+            checkLang();
+        }
+        public void checkLang()
+        {
+            if (Properties.Settings.Default.LanguageCode == "es-ES")
             {
-                Grid gridCard = new Grid
-                {
-                    Height = 300,
-                    Background = new SolidColorBrush(Color.FromArgb(0, 243, 243, 100)),
-                    //SE QUEDA Effect 
-                };
-                Grid.SetColumn(gridCard,i);
-                gridPrincipal.Children.Add(gridCard);
-                
-                // add a stackpanel
-                StackPanel stackPanel = new StackPanel
-                {
-                    Width = 200
-                };
-                // IMAGE
-                Image imagenPersonal = new Image
-                {
-                    Margin = new Thickness(20),
-                    Width = 200,
-                    Height = 150,
-                    Source = datosContactos.getDato(i)[datosContactos.getKey(0)]
-                };
-                //NOMBRE BLOCKTEXT
-                TextBlock textBlockNombre = new TextBlock
-                {
-                    Margin = new Thickness(10),
-                    FontFamily = FontFamily = new FontFamily("ShowCard Gothic"),
-                    FontSize = 12,
-                    Text = datosContactos.getDato(i)[datosContactos.getKey(1)]
-                };
-                textBlockNombre.HorizontalAlignment = HorizontalAlignment.Center;
-                // DESCRIPCION BLOCKTEXT
-                TextBlock textBlockDescripcion = new TextBlock
-                {
-                    Text = datosContactos.getDato(i)[datosContactos.getKey(2)],
-                    FontSize = 10,
+                nombre.Content = "Nombre";
+                puesto.Content = "Puesto";
+                fotoPersonal.Content = "Foto personal";
+                updateBtn.Content = "Editar";
+                insertBtn.Content = "Insertar";
+                deleteBtn.Content = "Eliminar";
+                clearBtn.Content = "Vaciar formulario";
+            }
+            else if (Properties.Settings.Default.LanguageCode == "en-US")
+            {
+                nombre.Content = "Name";
+                puesto.Content = "Job";
+                fotoPersonal.Content = "Peronal photo";
+                updateBtn.Content = "Edit";
+                insertBtn.Content = "Insert";
+                deleteBtn.Content = "Delete";
+                clearBtn.Content = "Clear form";
+            }
+            else
+            {
+                nombre.Content = "Nom";
+                puesto.Content = "Poste de travail";
+                fotoPersonal.Content = "Photo personnelle";
+                updateBtn.Content = "Modifier";
+                insertBtn.Content = "Inserter";
+                deleteBtn.Content = "Eliminer";
+                clearBtn.Content = "Formulaire vide";
+            }
+        }
 
-                    Margin = new Thickness(5),
-                    FontFamily = new FontFamily("Champagne &amp; Limousines")
-                };
-                textBlockDescripcion.HorizontalAlignment = HorizontalAlignment.Center;
-                textBlockDescripcion.TextWrapping = TextWrapping.Wrap;
-                // Stackpanel segundario
-                StackPanel stackPanel1 = new StackPanel();
-                stackPanel1.Orientation = Orientation.Horizontal;
-                stackPanel1.HorizontalAlignment = HorizontalAlignment.Center;
-                // DOS BOTONES
-                Button botonLLamar = new Button
-                {
-                    FontSize = 12,
-                    Width = 80,
-                    Content = "Llamar",
-                    FontFamily = new FontFamily("Champagne &amp; Limousines"),
-                    Margin = new Thickness(5),
-                    Background = new SolidColorBrush(Color.FromRgb(189, 147, 2))
-                };
-                Button botonMensaje = new Button
-                {
-                    FontSize = 12,
-                    Width = 80,
-                    Content = "Mensaje",
-                    FontFamily = new FontFamily("Champagne &amp; Limousines"),
-                    Margin = new Thickness(5),
-                    Background = new SolidColorBrush(Color.FromRgb(189, 147, 2))
-                };
-                stackPanel1.Children.Add(botonLLamar);
-                stackPanel1.Children.Add(botonMensaje);
-                
-                stackPanel.Children.Add(imagenPersonal);
-                stackPanel.Children.Add(textBlockNombre);
-                stackPanel.Children.Add(textBlockDescripcion);
-                stackPanel.Children.Add(stackPanel1);
+        public void checkColor()
+        {
+            if (((SolidColorBrush)mainWindow.gridPrincipalBackground.Background).Color == (Color)ColorConverter.ConvertFromString("#FFEEEEEE")){
+                id.Foreground = new SolidColorBrush(Color.FromRgb(34, 34, 34));
+                nombre.Foreground = new SolidColorBrush(Color.FromRgb(34, 34, 34));
+                puesto.Foreground = new SolidColorBrush(Color.FromRgb(34, 34, 34));
+                fotoPersonal.Foreground = new SolidColorBrush(Color.FromRgb(34, 34, 34));
 
-                gridCard.Children.Add(stackPanel);
+            } else
+            {
+                id.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                nombre.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                puesto.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                fotoPersonal.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+
+                nombre_txt.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                puesto_txt.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                //foto_txt.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                buscar_txt.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            }
+        }
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-7JLILKO\SQLEXPRESS;Initial Catalog=mirattidb;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework");
+        
+        public void LoadGrid()
+        {
+            SqlCommand cmd = new SqlCommand("Select * from trabajadores", con);
+            DataTable dt = new DataTable();
+            con.Open();
+            SqlDataReader sdr = cmd.ExecuteReader();
+            dt.Load(sdr);
+            con.Close();
+            datagrid.ItemsSource = dt.DefaultView;
+        }
+        public void clearData()
+        {
+            nombre_txt.Clear();
+            puesto_txt.Clear();
+            //foto_txt.Clear();
+            buscar_txt.Clear();
+        }
+        private void clearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            clearData();
+        }
+        public bool isValid()
+        {
+            if(nombre_txt.Text == string.Empty)
+            {
+                MessageBox.Show("Nombre es obligatorio", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            if (puesto_txt.Text == string.Empty)
+            {
+                MessageBox.Show("Puesto es obligatorio", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            return true;
+
+        }
+        private void insertBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (isValid())
+                {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO trabajadores VALUES (@nombre, @puesto, @imagen)", con);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@nombre", nombre_txt.Text);
+                    cmd.Parameters.AddWithValue("@puesto", puesto_txt.Text);
+                    cmd.Parameters.AddWithValue("@imagen", filepath);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    LoadGrid();
+                    MessageBox.Show("Datos del trabajador Han sido regitrados", "Registrados", MessageBoxButton.OK, MessageBoxImage.Information);
+                    clearData();
+                }
+            } catch (SqlException ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
+        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("delete from trabajadores where id = " + buscar_txt.Text + " ", con);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Datos eliminados", "Eliminado", MessageBoxButton.OK, MessageBoxImage.Information);
+                con.Close();
+                clearData();
+                LoadGrid();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Datos no eliminados, error es " + ex.Message);
+            }finally
+            {
+                con.Close();
+            }
+        }
+
+        private void updateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("update trabajadores set nombre = '"+ nombre_txt.Text +"', puesto = '" + puesto_txt.Text + "', imagen = '" + filepath + "' WHERE id = '" + buscar_txt.Text + "' ", con);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Datos han sido cambiados", "Modificados", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }finally
+            {
+                con.Close();
+                clearData();
+                LoadGrid();
+            }
+        }
+        public static string filepath;
+        private void btnUploadImage_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            bool? response = openFileDialog.ShowDialog();
+            if(response == true)
+            {
+                filepath = openFileDialog.FileName;
+                MessageBox.Show(filepath);
             }
         }
     }

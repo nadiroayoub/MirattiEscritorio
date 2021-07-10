@@ -21,18 +21,51 @@ namespace Miratti
     /// </summary>
     public partial class UserControlInicio : UserControl
     {
+        public MainWindow mainWindow = Window.GetWindow(Application.Current.MainWindow) as MainWindow;
         public UserControlInicio()
         {
             InitializeComponent();
+            checkColor();
+
+        }
+        public void checkColor()
+        {
+            if (((SolidColorBrush)mainWindow.gridPrincipalBackground.Background).Color == (Color)ColorConverter.ConvertFromString("#FFEEEEEE"))
+            {
+                slyg2.Foreground = new SolidColorBrush(Color.FromRgb(34, 34, 34));
+                slug1.Foreground = new SolidColorBrush(Color.FromRgb(34, 34, 34));
+
+            }
+            else
+            {
+
+                slyg2.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            slug1.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            gridInicio.Children.Clear();
-            //Height = "450" Width = "700" user control inicio a 450 700
-            
-            gridInicio.Children.Add(new UserControlPuntoDeVenta());
+           
+            MainWindow mainWindow = new MainWindow();
+            //mainWindow.ListViewMenu.SelectedIndex = 2;
+            //mainWindow.lvPuntoDeVenta.Selected(true);
+
+            //MessageBox.Show(mainWindow.lvPuntoDeVenta.IsSelected.ToString(), "f");
+            //mainWindow.Close();
+            mainWindow.indice = 1;
+            mainWindow.MoverCursorMenu(mainWindow.indice); //ERROR NO SE PPUEDE CAMBIAR 
+            switch (mainWindow.indice)
+            {
+                case 1:
+                    mainWindow.GridPrincipal.Children.Clear();
+                    mainWindow.GridPrincipal.Children.Add(new UserControlPuntoDeVenta());
+
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

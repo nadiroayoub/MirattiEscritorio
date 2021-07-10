@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,42 @@ namespace Miratti
     /// </summary>
     public partial class MainWindow : Window
     {
+        mirattidbEntities1 db;
         public MainWindow()
         {
             InitializeComponent();
+            //db = new mirattidbEntities1();
+            checkLang();
+        }
+
+        public void checkLang()
+        {
+            //if (Properties.Settings.Default.LanguageCode == "es-ES")
+            //{
+            //    txtblock_inicio.Text = "Inicio";
+            //    puntoDeVenta.Text = "Punto de venta";
+            //    trabajadores.Text = "Trabajadores";
+            //    configuracion.Text = "Configuración";
+            //}
+            //else if (Properties.Settings.Default.LanguageCode == "en-US")
+            //{
+            //    txtblock_inicio.Text = "Home";
+            //    puntoDeVenta.Text = "Point of sale";
+            //    trabajadores.Text = "Workers";
+            //    configuracion.Text = "Configuration";
+            //}
+            //else
+            //{
+            //    txtblock_inicio.Text = "Inicial";
+            //    puntoDeVenta.Text = "Point de vente";
+            //    trabajadores.Text = "Travailleurs";
+            //    configuracion.Text = "Configuration";
+            //}
+        }
+        
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void ButtonFecher_Click(object sender, RoutedEventArgs e)
@@ -34,10 +68,12 @@ namespace Miratti
         {
             DragMove();
         }
+        //public int indice;
+        public int indice { get; set; }
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int indice = ListViewMenu.SelectedIndex;
+            indice = ListViewMenu.SelectedIndex;
             MoverCursorMenu(indice);
             switch (indice)
             {
@@ -53,12 +89,16 @@ namespace Miratti
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new UserControlContact());
                     break;
+                case 3:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new UserControlAjustes());
+                    break;
                 default:
                     break;
             }
         }
 
-        private void MoverCursorMenu(int indice)
+        public void MoverCursorMenu(int indice)
         {
             TransitionigContentSlide.OnApplyTemplate();
             GridCursor.Margin = new Thickness(0, (100 + ( 60 * indice)), 0, 0);

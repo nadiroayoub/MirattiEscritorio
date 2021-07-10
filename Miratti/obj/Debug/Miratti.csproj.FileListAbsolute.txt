@@ -6,7 +6,6 @@ E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITOR
 E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\bin\Debug\MaterialDesignColors.pdb
 E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\bin\Debug\MaterialDesignThemes.Wpf.pdb
 E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\bin\Debug\MaterialDesignThemes.Wpf.xml
-E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\Miratti.csprojAssemblyReference.cache
 E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\MainWindow.g.cs
 E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\App.g.cs
 E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\Miratti_MarkupCompile.cache
@@ -30,3 +29,70 @@ E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITOR
 E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\bin\Debug\Newtonsoft.Json.xml
 E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\UserControlPuntoDeVenta.g.cs
 E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\UserControlPuntoDeVenta.baml
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\UserControlAjustes.g.cs
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\UserControlAjustes.baml
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\bin\Debug\Miratti.exe.manifest
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\bin\Debug\Miratti.application
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\Miratti.exe.manifest
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\Miratti.application
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\bin\Debug\en\Miratti.resources.dll
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\Miratti.Properties.Langs.Lang.resources
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\Miratti.Properties.Langs.Lang.en.resources
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\en\Miratti.resources.dll
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\Miratti.csprojAssemblyReference.cache
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\bin\Debug\EntityFramework.dll
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\bin\Debug\EntityFramework.SqlServer.dll
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\bin\Debug\EntityFramework.xml
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\bin\Debug\EntityFramework.SqlServer.xml
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\UserControlLogin.g.cs
+E:\A.Cursos oficiales\Segundo ano\PROGRAMACIÓN AVANZADA EN ENTORNOS DE ESCRITORIO (38208)\EL SEGUNDO AÑO\TF Escritorio\Miratti\Miratti\obj\Debug\UserControlLogin.baml
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\Assets\Miratti.mp4
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\Miratti.exe.config
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\Miratti.exe.manifest
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\Miratti.application
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\Miratti.exe
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\Miratti.pdb
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\en\Miratti.resources.dll
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\EntityFramework.dll
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\MaterialDesignColors.dll
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\Newtonsoft.Json.dll
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\EntityFramework.xml
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\MaterialDesignColors.pdb
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\NoA\Desktop\Miratti\Miratti\bin\Debug\Newtonsoft.Json.xml
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti.csprojAssemblyReference.cache
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\MainWindow.g.cs
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\UserControlAjustes.g.cs
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\UserControlContact.g.cs
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\UserControlInicio.g.cs
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\UserControlLogin.g.cs
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\UserControlPuntoDeVenta.g.cs
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\App.g.cs
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti_Content.g.cs
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti_MarkupCompile.cache
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti_MarkupCompile.lref
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\App.baml
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\MainWindow.baml
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\UserControlAjustes.baml
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\UserControlContact.baml
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\UserControlInicio.baml
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\UserControlLogin.baml
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\UserControlPuntoDeVenta.baml
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti.g.resources
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti.Properties.Langs.Lang.resources
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti.Properties.Resources.resources
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti.Properties.Langs.Lang.en.resources
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti.csproj.GenerateResource.cache
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti.csproj.CoreCompileInputs.cache
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\en\Miratti.resources.dll
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti.exe.manifest
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti.application
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti.csproj.CopyComplete
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti.exe
+C:\Users\NoA\Desktop\Miratti\Miratti\obj\Debug\Miratti.pdb

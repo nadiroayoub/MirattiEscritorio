@@ -13,10 +13,9 @@
                 <StackPanel VerticalAlignment="Center">
                     <Image Source="Assets/logo Miratti.png" HorizontalAlignment="Center"/>
                     <StackPanel Margin="10">
-                        <TextBlock Text="PRODUCTOS HECHOS A MANO" HorizontalAlignment="Center" FontSize="16" FontFamily="Couper Black" FontWeight="Bold"/>
-                        <TextBlock Text="CON CORAZÓN" FontSize="16" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" FontWeight="bold" Margin="5"/>
+                        <TextBlock x:Name="slug1" Text="PRODUCTOS HECHOS A MANO" HorizontalAlignment="Center" FontSize="16" FontFamily="Couper Black" FontWeight="Bold"/>
+                        <TextBlock x:Name="slyg2" Text="CON CORAZÓN" FontSize="16" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines" FontWeight="bold" Margin="5"/>
                     </StackPanel>
-                    <Button Content="Iniciar la sesión" HorizontalAlignment="Center" Background="#bd9302" Click="Button_Click"/>
                 </StackPanel>
                 <StackPanel Width="340">
                     <MediaElement Margin="40" Name="mediaElement1">

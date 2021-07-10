@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\NoA\\Desktop\\Miratti\\MirattiTests\\MirattiTests.csproj": {}
+    "E:\\PROJECT ZEB\\Miratti\\MirattiTests\\MirattiTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\NoA\\Desktop\\Miratti\\MirattiTests\\MirattiTests.csproj": {
+    "E:\\PROJECT ZEB\\Miratti\\MirattiTests\\MirattiTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\NoA\\Desktop\\Miratti\\MirattiTests\\MirattiTests.csproj",
+        "projectUniqueName": "E:\\PROJECT ZEB\\Miratti\\MirattiTests\\MirattiTests.csproj",
         "projectName": "MirattiTests",
-        "projectPath": "C:\\Users\\NoA\\Desktop\\Miratti\\MirattiTests\\MirattiTests.csproj",
+        "projectPath": "E:\\PROJECT ZEB\\Miratti\\MirattiTests\\MirattiTests.csproj",
         "packagesPath": "C:\\Users\\NoA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\NoA\\Desktop\\Miratti\\MirattiTests\\obj\\",
+        "outputPath": "E:\\PROJECT ZEB\\Miratti\\MirattiTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\NoA\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\NoA\\Desktop\\Miratti\\Miratti\\Miratti.csproj": {
-                "projectPath": "C:\\Users\\NoA\\Desktop\\Miratti\\Miratti\\Miratti.csproj"
+              "E:\\PROJECT ZEB\\Miratti\\Miratti\\Miratti.csproj": {
+                "projectPath": "E:\\PROJECT ZEB\\Miratti\\Miratti\\Miratti.csproj"
               }
             }
           }
@@ -80,11 +80,11 @@
         }
       }
     },
-    "C:\\Users\\NoA\\Desktop\\Miratti\\Miratti\\Miratti.csproj": {
+    "E:\\PROJECT ZEB\\Miratti\\Miratti\\Miratti.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\NoA\\Desktop\\Miratti\\Miratti\\Miratti.csproj",
+        "projectUniqueName": "E:\\PROJECT ZEB\\Miratti\\Miratti\\Miratti.csproj",
         "projectName": "Miratti",
-        "projectPath": "C:\\Users\\NoA\\Desktop\\Miratti\\Miratti\\Miratti.csproj"
+        "projectPath": "E:\\PROJECT ZEB\\Miratti\\Miratti\\Miratti.csproj"
       },
       "frameworks": {
         "net46": {}

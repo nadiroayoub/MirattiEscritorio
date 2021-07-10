@@ -89,12 +89,18 @@ namespace Miratti
             List<CategoriaViewModel> lst = new List<CategoriaViewModel>();
             using (mirattidbEntities1 db1 = new mirattidbEntities1())
             {
+                try
+                {
                 lst = (from d in db1.categorias
                        select new CategoriaViewModel
                        {
                            id = d.idCategoria,
                            nombre = d.nombre
                        }).ToList();
+                }catch(Exception ex)
+                {
+                    Trace.TraceError("Error en " + ex);
+                }
             }
             itemsControl.ItemsSource = lst;
 
@@ -102,7 +108,7 @@ namespace Miratti
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("Clicked: " + this.Content);
+
             var keyword = (e.Source as Button).Content.ToString();
             GetProductos( keyword);
         }
@@ -115,18 +121,27 @@ namespace Miratti
                 List<ProductosViewModel> lst = new List<ProductosViewModel>();
                 using (mirattidbEntities1 db1 = new mirattidbEntities1())
                 {
-                    lst = (from d in db1.productos
-                           select new ProductosViewModel
-                           {
-                               //if ()
+                    try
+                    {
+                        lst = (from d in db1.productos
+                               select new ProductosViewModel
+                               {
+                                   id = d.idProducto,
+                                   nombre = d.nombre,
+                                   imagen = d.imagen,
+                                   precio = d.precio,
+                                   idCategoria = d.idCategoria
                     
-                               id = d.idProducto,
-                               nombre = d.nombre,
-                               imagen = d.imagen,
-                               precio = d.precio,
-                               idCategoria = d.idCategoria
-                    
-                           }).ToList();
+                               }).ToList();
+                    }
+                    catch (Exception ex)
+                    {
+                        Trace.TraceError("Error en " + ex);
+                    }
+                    if(lst == null)
+                    {
+                        Trace.TraceError("No hay productos");
+                    }
                 }
                 List<ProductosViewModel> filtredList = new List<ProductosViewModel>();
                 
@@ -151,8 +166,6 @@ namespace Miratti
                     lst = (from d in db1.productos
                            select new ProductosViewModel
                            {
-                               //if ()
-
                                id = d.idProducto,
                                nombre = d.nombre,
                                imagen = d.imagen,
@@ -201,6 +214,7 @@ namespace Miratti
             listaProductos.Clear();
             PrecioTotal = 0;
             //botonEditar.BorderBrush = new SolidColorBrush(Colors.Transparent);
+            Trace.TraceInformation("Hice un clear en la lista");
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

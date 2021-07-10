@@ -1,7 +1,10 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +45,7 @@ namespace Miratti
                 insertBtn.Content = "Insertar";
                 deleteBtn.Content = "Eliminar";
                 clearBtn.Content = "Vaciar formulario";
+                btnUploadImage.Content = "Imagen";
             }
             else if (Properties.Settings.Default.LanguageCode == "en-US")
             {
@@ -52,6 +56,7 @@ namespace Miratti
                 insertBtn.Content = "Insert";
                 deleteBtn.Content = "Delete";
                 clearBtn.Content = "Clear form";
+                btnUploadImage.Content = "Image";
             }
             else
             {
@@ -62,6 +67,7 @@ namespace Miratti
                 insertBtn.Content = "Inserter";
                 deleteBtn.Content = "Eliminer";
                 clearBtn.Content = "Formulaire vide";
+                btnUploadImage.Content = "Imagen";
             }
         }
 
@@ -196,8 +202,14 @@ namespace Miratti
             if(response == true)
             {
                 filepath = openFileDialog.FileName;
-                MessageBox.Show(filepath);
+                MessageBox.Show("Su imagen" + filepath + " se ha guardado");
             }
+        }
+
+
+        private void btnUploadImage_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

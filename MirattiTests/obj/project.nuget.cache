@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SW2WDriRYsXFcEy9C+mzpedD1eTTKT/gQsDCA1bKezxxknsZVhIenFpftSJ5shQuRrCQeG7dztuGn3T87A2qeg==",
+  "dgSpecHash": "pEsEX4xOabWzwD52FJuvgmc0nAaJUid/4LSXh41uCWFV416mC6Qj1KYXQAxY+enQCMD1msQDrNTmy2mWz1Wktw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\NoA\\Desktop\\Miratti\\MirattiTests\\MirattiTests.csproj",
+  "projectFilePath": "E:\\PROJECT ZEB\\Miratti\\MirattiTests\\MirattiTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NoA\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\NoA\\.nuget\\packages\\microsoft.codecoverage\\16.7.1\\microsoft.codecoverage.16.7.1.nupkg.sha512",

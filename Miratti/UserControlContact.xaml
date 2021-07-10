@@ -10,8 +10,8 @@
     <Grid>
         <materialDesign:TransitioningContent x:Name="TransitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration= 0:0:0.8}">
             <Grid x:Name="gridPrincipal">
-                <Label x:Name="nombre" Content="Nombre" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="67,86,0,0" FontSize="14"/>
-                <Label x:Name="puesto" Content="Puesto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="67,115,0,0" FontSize="14"/>
+                <Label x:Name="nombre" Content="Nombre" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="67,74,0,0" FontSize="14"/>
+                <Label x:Name="puesto" Content="Puesto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="67,103,0,0" FontSize="14"/>
                 <Label x:Name="fotoPersonal" Content="Foto Personal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="67,144,0,0" FontSize="14"/>
 
                 <Label x:Name="id" Content="ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="283,279,0,0" FontSize="14"/>
@@ -29,6 +29,7 @@
                 <Button x:Name="deleteBtn" Content="Eliminar" Background="#bd9302" BorderBrush="Transparent"  HorizontalAlignment="Left" Margin="340,346,0,22" Click="deleteBtn_Click"/>
                 <Button x:Name="clearBtn" Content="Vaciar formulario" Background="#bd9302" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="540,346,0,22" Click="clearBtn_Click"/>
                 <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="167" VerticalAlignment="Top" Width="361" Margin="385,71,0,0"/>
+                <Button x:Name="btnUploadImage_Copy" Click="btnUploadImage_Copy_Click" Content="Exportar pdf" Background="#bd9302" BorderBrush="Transparent"  Margin="529,258,134,110"/>
 
             </Grid>
         </materialDesign:TransitioningContent>

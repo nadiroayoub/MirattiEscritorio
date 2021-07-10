@@ -32,8 +32,13 @@ namespace Miratti
         public string menu { get; set; }
         public string Flag { get; set; }
     }
+    //public class Extra
+    //{
+    //    public List<Lang> lista;
+    //}
     public class Languages
     {
+        public List<Lang> lista;
         public List<Lang> MyLangs { get; set; } = GetLangs();
         
         public static List<Lang> GetLangs()
@@ -58,19 +63,19 @@ namespace Miratti
         public UserControlAjustes()
         {
             InitializeComponent();
-
             checkColor();
             checkIdioma();
-            
         }
 
         public MainWindow mainWindow = Window.GetWindow(Application.Current.MainWindow) as MainWindow;
         public void checkIdioma()
         {
-            if (isChanged) 
+            if (isChanged && mainWindow.IsLoaded)
             {
+                //MessageBox.Show(Properties.Settings.Default.LanguageCode);
                 if (Properties.Settings.Default.LanguageCode == "es-ES")
                 {
+
                     menuText.Text = "Menú";
                     temaOscuroText.Text = "Tema oscuro";
                     traduccionText.Text = "Traducción";
@@ -99,8 +104,8 @@ namespace Miratti
                     acercaDeText.Text = "à propos de";
                     cerrarSessionText.Text = "Fermer la session";
                 }
+                isChanged = false;
             }
-            isChanged = false;
         }
         public void checkColor()
         {
@@ -236,31 +241,38 @@ namespace Miratti
 
             }
         }
-
+        public string langChosed;
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            isChanged = true;
             // internacionlizacion
             if (combobox.SelectedIndex == 0)
             {
-             
                 Trace.TraceInformation("Un cambio de idioma a Español");
                 Properties.Settings.Default.LanguageCode = "es-ES";
-                mainWindow.InitializeComponent();
-
+                mainWindow.trabajadores.Text = "Trabajadores";
+                mainWindow.puntoDeVenta.Text = "Punto de venta";
+                mainWindow.configuracion.Text = "Configuracion";
+                mainWindow.txtblock_inicio.Text = "Inicio";
             }
             else if(combobox.SelectedIndex == 1)
             {
                 Trace.TraceInformation("Un cambio de idioma a English");
                 Properties.Settings.Default.LanguageCode = "en-US";
-                mainWindow.InitializeComponent();
+                mainWindow.trabajadores.Text = "Staff of workers";
+                mainWindow.puntoDeVenta.Text = "point of sale";
+                mainWindow.configuracion.Text = "Configuration";
+                mainWindow.txtblock_inicio.Text = "Home";
             }
             else
             {
                 Trace.TraceInformation("Un cambio de idioma a French");
                 Properties.Settings.Default.LanguageCode = "fr-FR";
-                mainWindow.InitializeComponent();
+                mainWindow.trabajadores.Text = "Travailleurs";
+                mainWindow.puntoDeVenta.Text = "point de vente";
+                mainWindow.configuracion.Text = "Configuration";
+                mainWindow.txtblock_inicio.Text = "Inicial";
             }
+            isChanged = true;
 
         }
 

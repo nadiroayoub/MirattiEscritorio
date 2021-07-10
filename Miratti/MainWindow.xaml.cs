@@ -27,6 +27,7 @@ namespace Miratti
             InitializeComponent();
             //db = new mirattidbEntities1();
             checkLang();
+            isLoaded = true;
         }
 
         public void checkLang()
@@ -70,6 +71,7 @@ namespace Miratti
         }
         //public int indice;
         public int indice { get; set; }
+        public bool isLoaded { get; set; }
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

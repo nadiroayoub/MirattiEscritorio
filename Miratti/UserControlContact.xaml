@@ -29,7 +29,9 @@
                 <Button x:Name="deleteBtn" Content="Eliminar" Background="#bd9302" BorderBrush="Transparent"  HorizontalAlignment="Left" Margin="340,346,0,22" Click="deleteBtn_Click"/>
                 <Button x:Name="clearBtn" Content="Vaciar formulario" Background="#bd9302" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="540,346,0,22" Click="clearBtn_Click"/>
                 <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="167" VerticalAlignment="Top" Width="361" Margin="385,71,0,0"/>
-                <Button x:Name="btnUploadImage_Copy" Click="btnUploadImage_Copy_Click" Content="Exportar pdf" Background="#bd9302" BorderBrush="Transparent"  Margin="529,258,134,110"/>
+                <Button x:Name="btnUploadImage_Copy" Click="btnUploadImage_Copy_Click" Background="#bd9302" BorderBrush="Transparent"  Margin="529,258,169,110">
+                    <materialDesign:PackIcon Kind="printer"/>
+                </Button>
 
             </Grid>
         </materialDesign:TransitioningContent>

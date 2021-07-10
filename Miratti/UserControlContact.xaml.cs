@@ -1,6 +1,4 @@
-﻿using iTextSharp.text;
-using iTextSharp.text.pdf;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -17,6 +15,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PdfSharp.Drawing;
+using System.Collections;
+using System.Windows.Controls.Primitives;
+using Syncfusion.Pdf.Graphics;
+using Syncfusion.Pdf;
+using System.ComponentModel;
+using System.Drawing;
+using Color = System.Windows.Media.Color;
+using Syncfusion.Pdf.Grid;
 
 namespace Miratti
 {
@@ -33,6 +40,7 @@ namespace Miratti
             LoadGrid();
             checkColor();
             checkLang();
+
         }
         public void checkLang()
         {
@@ -73,7 +81,7 @@ namespace Miratti
 
         public void checkColor()
         {
-            if (((SolidColorBrush)mainWindow.gridPrincipalBackground.Background).Color == (Color)ColorConverter.ConvertFromString("#FFEEEEEE")){
+            if (((SolidColorBrush)mainWindow.gridPrincipalBackground.Background).Color == (Color)System.Windows.Media.ColorConverter.ConvertFromString("#FFEEEEEE")){
                 id.Foreground = new SolidColorBrush(Color.FromRgb(34, 34, 34));
                 nombre.Foreground = new SolidColorBrush(Color.FromRgb(34, 34, 34));
                 puesto.Foreground = new SolidColorBrush(Color.FromRgb(34, 34, 34));
@@ -206,10 +214,57 @@ namespace Miratti
             }
         }
 
-
+        
         private void btnUploadImage_Copy_Click(object sender, RoutedEventArgs e)
         {
 
+            //    //Create a new PDF document.
+            //    PdfDocument doc = new PdfDocument();
+            //    //Add a page.
+            //    PdfPage page = doc.Pages.Add();
+            //    //Create a PdfGrid.
+            //    PdfGrid pdfGrid = new PdfGrid();
+            //    //Create a DataTable.
+            //    DataTable dataTable = new DataTable();
+            //    //Add columns to the DataTable
+            //    dataTable.Columns.Add("ID");
+            //    dataTable.Columns.Add("Name");
+            //    dataTable.Columns.Add("Puesto");
+            //    dataTable.Columns.Add("ubicacion de la imagen");
+            ////Add rows to the DataTable.
+
+            //dataTable.Rows.Add(new object[] { "E02", "Thomas" });
+            //    dataTable.Rows.Add(new object[] { "E03", "Andrew" });
+            //    dataTable.Rows.Add(new object[] { "E04", "Paul" });
+            //    dataTable.Rows.Add(new object[] { "E05", "Gary" });
+            //    //Assign data source.
+            //    pdfGrid.DataSource = dataTable;
+            //    //Draw grid to the page of PDF document.
+            //    pdfGrid.Draw(page, new PointF(10, 10));
+            //    //Save the document.
+            //    doc.Save("Output.pdf");
+            //    //close the document
+            //    doc.Close(true);
+            //    MessageBox.Show("Documento creado");
+            
+            try
+            {
+                this.IsEnabled = false;
+                PrintDialog printDialog = new PrintDialog();
+                if(printDialog.ShowDialog() == true)
+                {
+                    printDialog.PrintVisual(datagrid, "Lista de trabajadores");
+                }else
+                {
+                    mainWindow.GridPrincipal.Children.Clear();
+                    mainWindow.GridPrincipal.Children.Add(new UserControlContact());
+                }
+            }
+            catch(Exception)
+            {
+                this.IsEnabled = true;
+            }
+            
         }
     }
 }

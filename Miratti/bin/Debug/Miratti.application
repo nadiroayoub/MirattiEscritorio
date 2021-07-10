@@ -14,14 +14,14 @@
     <framework targetVersion="4.6" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Miratti.exe.manifest" size="10097">
+    <dependentAssembly dependencyType="install" codebase="Miratti.exe.manifest" size="27046">
       <assemblyIdentity name="Miratti.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1/dg4lTCbTnaCgQPvHvscWivN4mA2gX96QTwtKi9/dI=</dsig:DigestValue>
+        <dsig:DigestValue>YqXcEsep5W7kDvvjE6hO4Vc+jpd8xd0owipuXIPjYrY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

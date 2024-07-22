@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MirattiTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6be4d8be3e4be9a8c3dced2fb21d9528706d48cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("MirattiTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MirattiTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

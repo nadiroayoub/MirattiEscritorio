@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\PROJECT ZEB\\Miratti\\MirattiTests\\MirattiTests.csproj": {}
+    "C:\\Users\\Ayoub.Nadir\\Documents\\My Web Sites\\Portfolio\\MirattiEscritorio\\MirattiTests\\MirattiTests.csproj": {}
   },
   "projects": {
-    "E:\\PROJECT ZEB\\Miratti\\MirattiTests\\MirattiTests.csproj": {
+    "C:\\Users\\Ayoub.Nadir\\Documents\\My Web Sites\\Portfolio\\MirattiEscritorio\\MirattiTests\\MirattiTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\PROJECT ZEB\\Miratti\\MirattiTests\\MirattiTests.csproj",
+        "projectUniqueName": "C:\\Users\\Ayoub.Nadir\\Documents\\My Web Sites\\Portfolio\\MirattiEscritorio\\MirattiTests\\MirattiTests.csproj",
         "projectName": "MirattiTests",
-        "projectPath": "E:\\PROJECT ZEB\\Miratti\\MirattiTests\\MirattiTests.csproj",
-        "packagesPath": "C:\\Users\\NoA\\.nuget\\packages\\",
-        "outputPath": "E:\\PROJECT ZEB\\Miratti\\MirattiTests\\obj\\",
+        "projectPath": "C:\\Users\\Ayoub.Nadir\\Documents\\My Web Sites\\Portfolio\\MirattiEscritorio\\MirattiTests\\MirattiTests.csproj",
+        "packagesPath": "C:\\Users\\Ayoub.Nadir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ayoub.Nadir\\Documents\\My Web Sites\\Portfolio\\MirattiEscritorio\\MirattiTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\NoA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ayoub.Nadir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +22,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\PROJECT ZEB\\Miratti\\Miratti\\Miratti.csproj": {
-                "projectPath": "E:\\PROJECT ZEB\\Miratti\\Miratti\\Miratti.csproj"
+              "C:\\Users\\Ayoub.Nadir\\Documents\\My Web Sites\\Portfolio\\MirattiEscritorio\\Miratti\\Miratti.csproj": {
+                "projectPath": "C:\\Users\\Ayoub.Nadir\\Documents\\My Web Sites\\Portfolio\\MirattiEscritorio\\Miratti\\Miratti.csproj"
               }
             }
           }
@@ -38,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -67,7 +73,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -76,15 +83,20 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\PROJECT ZEB\\Miratti\\Miratti\\Miratti.csproj": {
+    "C:\\Users\\Ayoub.Nadir\\Documents\\My Web Sites\\Portfolio\\MirattiEscritorio\\Miratti\\Miratti.csproj": {
       "restore": {
-        "projectUniqueName": "E:\\PROJECT ZEB\\Miratti\\Miratti\\Miratti.csproj",
+        "projectUniqueName": "C:\\Users\\Ayoub.Nadir\\Documents\\My Web Sites\\Portfolio\\MirattiEscritorio\\Miratti\\Miratti.csproj",
         "projectName": "Miratti",
-        "projectPath": "E:\\PROJECT ZEB\\Miratti\\Miratti\\Miratti.csproj"
+        "projectPath": "C:\\Users\\Ayoub.Nadir\\Documents\\My Web Sites\\Portfolio\\MirattiEscritorio\\Miratti\\Miratti.csproj",
+        "frameworks": {
+          "net46": {
+            "projectReferences": {}
+          }
+        }
       },
       "frameworks": {
         "net46": {}
